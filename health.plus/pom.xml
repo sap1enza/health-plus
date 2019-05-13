@@ -88,6 +88,6 @@
 	</dependency>
   </dependencies>
   <build>
-    <finalName>smartities</finalName>
+    <finalName>healthPlus</finalName>
   </build>
 </project>
