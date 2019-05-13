@@ -15,4 +15,10 @@ public class HomeController {
 	public String contato() {
 		return "home/contato";
 	}
+	
+	@GetMapping("/paciente/cadastro")
+	public String cadastro() {
+		return "paciente/cadastro";
+	}
+	
 }
