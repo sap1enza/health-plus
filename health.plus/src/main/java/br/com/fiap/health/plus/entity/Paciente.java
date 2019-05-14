@@ -30,8 +30,8 @@ public class Paciente implements Serializable{
 	@Column(name="email")
 	private String email;
 	
-//	@Column(name="password")
-//	private String senha;
+	@Column(name="password")
+	private String senha;
 	
 //	@Column(name="cpf")
 //	private String cpf;
@@ -59,11 +59,12 @@ public class Paciente implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Paciente(int id, String nome, String email, String dataNasc, char genero) {
+	public Paciente(int id, String nome, String email, String senha, String dataNasc, char genero) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
+		this.senha = senha;
 		this.dataNasc = dataNasc;
 		this.genero = genero;
 	}
@@ -90,6 +91,14 @@ public class Paciente implements Serializable{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public String getDataNasc() {

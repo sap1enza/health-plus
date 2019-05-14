@@ -21,4 +21,9 @@ public class HomeController {
 		return "paciente/cadastro";
 	}
 	
+	@GetMapping("/clinica/lista")
+	public String lista() {
+		return "clinica/lista";
+	}
+	
 }

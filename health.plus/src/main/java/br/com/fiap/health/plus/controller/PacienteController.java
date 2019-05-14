@@ -19,6 +19,12 @@ public class PacienteController {
 	
 	@Autowired
 	private PacienteDAO dao;
+	
+//	@GetMapping("listar")
+//	public ModelAndView listar() {
+//		System.out.println(dao.listar());
+//		return new ModelAndView("paciente/lista").addObject("lista", dao.listar());
+//	}
 
 	@GetMapping("cadastrar")
 	public String abrirForm(Paciente paciente) {

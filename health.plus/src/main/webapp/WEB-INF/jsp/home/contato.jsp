@@ -1,14 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Spring MVC Hello World</title>
-</head>
-<body>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
+
+<tags:template title="Contato+">
 
 	<h1>Contato :)</h1>
-
-</body>
-</html>
+</tags:template>
