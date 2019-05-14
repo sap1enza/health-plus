@@ -12,37 +12,26 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.fiap.health.plus.dao.PacienteDAO;
 import br.com.fiap.health.plus.entity.Paciente;
 
-
 @Controller
-@RequestMapping("paciente")
 public class PacienteController {
-	
+		
 	@Autowired
 	private PacienteDAO dao;
-	
-//	@GetMapping("listar")
-//	public ModelAndView listar() {
-//		System.out.println(dao.listar());
-//		return new ModelAndView("paciente/lista").addObject("lista", dao.listar());
-//	}
 
-	@GetMapping("cadastrar")
+	@GetMapping("/paciente/cadastro")
 	public String abrirForm(Paciente paciente) {
-		return "paciente/cadastro";
+		return "/paciente/cadastro";
 	}
-	
-	@PostMapping("cadastrar")
+
 	@Transactional
-	public ModelAndView processarForm(Paciente paciente, RedirectAttributes attr) {
-		try {
-			dao.cadastrar(paciente);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return new ModelAndView("paciente/cadastro");
-		}
-		
-		attr.addFlashAttribute("msg", "Cadastrado com sucesso!");
-		return new ModelAndView("redirect:/paciente/cadastrar");
+	@PostMapping("/paciente/cadastro")
+	public ModelAndView processarForm(Paciente paciente, RedirectAttributes redirect) {
+	  try {
+	    dao.cadastrar(paciente);
+	  }catch(Exception e) {
+	    return new ModelAndView("/paciente/cadastro").addObject("msg", e.getMessage());
+	  }
+	  redirect.addFlashAttribute("msg", "Cadastro realizado");
+	  return new ModelAndView("redirect:/paciente/cadastro");
 	}
-	
 }

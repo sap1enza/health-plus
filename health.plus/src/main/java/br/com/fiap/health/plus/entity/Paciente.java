@@ -11,12 +11,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@Table(name="SQ_PACIENTE")
 public class Paciente implements Serializable{
-	
 
 	@Id
 	@SequenceGenerator(name="paciente",sequenceName="sq_paciente",allocationSize=1)
@@ -25,28 +26,24 @@ public class Paciente implements Serializable{
 	private int id;
 	
 	@Column(name="name")
-	private String nome;
+	private String name;
 	
 	@Column(name="email")
 	private String email;
 	
 	@Column(name="password")
-	private String senha;
+	private String password;
 	
 //	@Column(name="cpf")
 //	private String cpf;
 	
-//	@Temporal(TemporalType.DATE)
-//	@Column(name="birth_date")
-//	private Calendar dataNasc;
+	@Temporal(TemporalType.DATE)
+	@Column(name="birth_date")
+	private Calendar birth_date;
 	
-	private String dataNasc;
-//	
-//	@Enumerated(EnumType.STRING)
-//	@Column(name="gender", columnDefinition="CHAR")
-//	private Genero genero;
-	
-	private char genero;
+	@Enumerated(EnumType.STRING)
+	@Column(name="gender", columnDefinition="CHAR")
+	private Genero gender;
 	
 //	@Column(name="phone_number")
 //	private String telefone;
@@ -59,14 +56,14 @@ public class Paciente implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Paciente(int id, String nome, String email, String senha, String dataNasc, char genero) {
+	public Paciente(int id, String name, String email, Calendar birth_date, Genero gender) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 		this.email = email;
-		this.senha = senha;
-		this.dataNasc = dataNasc;
-		this.genero = genero;
+  	this.senha = senha;
+		this.birth_date = birth_date;
+		this.gender = gender;
 	}
 
 	public int getId() {
@@ -77,12 +74,12 @@ public class Paciente implements Serializable{
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNome(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -93,28 +90,28 @@ public class Paciente implements Serializable{
 		this.email = email;
 	}
 	
-	public String getSenha() {
-		return senha;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getDataNasc() {
-		return dataNasc;
+	public Calendar getBirthDate() {
+		return birth_date;
 	}
 
-	public void setDataNasc(String dataNasc) {
-		this.dataNasc = dataNasc;
+	public void setBirthDate(Calendar birth_date) {
+		this.birth_date = birth_date;
 	}
 
-	public char getGenero() {
-		return genero;
+	public Genero getGender() {
+		return gender;
 	}
 
-	public void setGenero(char genero) {
-		this.genero = genero;
+	public void setGenero(Genero gender) {
+		this.gender = gender;
 	}
 	
 	

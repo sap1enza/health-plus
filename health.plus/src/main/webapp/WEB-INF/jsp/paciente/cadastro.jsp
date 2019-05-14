@@ -6,24 +6,24 @@
 
 <tags:template title="Cadastro Paciente+">
 	<h1>Cadastro de Paciente</h1>
-	${msg }
-	<c:url value="/paciente/cadastrar" var="action" />
-	<form:form action="${action }" method="post" commandName="paciente">
+	${msg}
+	<c:url value="/paciente/cadastro" var="action" />
+	<form:form action="${action}" method="post" commandName="paciente">
 		<div class="form-group">
-			<form:label path="nome">Nome</form:label>
-			<form:input path="nome" cssClass="form-control" />
+			<form:label path="name">Nome</form:label>
+			<form:input path="name" cssClass="form-control" />
 		</div>
 		<div class="form-group">
 			<form:label path="email">Email</form:label>
 			<form:input path="email" cssClass="form-control"  />
 		</div>
 		<div class="form-group">
-			<form:label path="dataNasc">Data de Nascimento</form:label>
-			<form:input path="dataNasc" cssClass="form-control" />
+			<form:label path="password">Senha</form:label>
+			<form:password path="password" cssClass="form-control" />
 		</div>
 		<div class="form-group">
-			<form:label path="genero">Gênero</form:label>
-			<form:input path="genero" cssClass="form-control"  />
+			<form:label path="gender">Gênero</form:label>
+			<form:input path="gender" cssClass="form-control" />
 		</div>
 		<input type="submit" value="Salvar" class="btn btn-primary">
 	</form:form>
