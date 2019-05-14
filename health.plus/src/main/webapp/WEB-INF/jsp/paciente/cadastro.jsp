@@ -10,25 +10,24 @@
 </head>
 <body>
 	<h1>Cadastro de Paciente</h1>
-	${msg }
-	<c:url value="/paciente/cadastrar" var="action" />
-	<form:form action="${action }" method="post"
-		commandName="paciente">
+	${msg}
+	<c:url value="/paciente/cadastro" var="action" />
+	<form:form action="${action}" method="post" commandName="paciente">
 		<div class="form-group">
-			<form:label path="nome">Nome</form:label>
-			<form:input path="nome" />
+			<form:label path="name">Nome</form:label>
+			<form:input path="name" />
 		</div>
 		<div class="form-group">
 			<form:label path="email">Email</form:label>
 			<form:input path="email" />
 		</div>
 		<div class="form-group">
-			<form:label path="dataNasc">Data de Nascimento</form:label>
-			<form:input path="dataNasc"/>
+			<form:label path="password">Senha</form:label>
+			<form:password path="password" />
 		</div>
 		<div class="form-group">
-			<form:label path="genero">Gênero</form:label>
-			<form:input path="genero" />
+			<form:label path="gender">Gênero</form:label>
+			<form:input path="gender" />
 		</div>
 		<input type="submit" value="Salvar">
 	</form:form>
