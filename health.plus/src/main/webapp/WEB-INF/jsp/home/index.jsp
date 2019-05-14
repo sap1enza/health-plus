@@ -18,6 +18,7 @@ pageEncoding="UTF-8"%>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <style>
+
 .login-container{
     margin-top: 5%;
     margin-bottom: 5%;
@@ -60,12 +61,12 @@ pageEncoding="UTF-8"%>
     color: #0062cc;
     background-color: #fff;
 }
-.login-form-2 .ForgetPwd{
+.login-form-2 .SignUp{
     color: #fff;
     font-weight: 600;
     text-decoration: none;
 }
-.login-form-1 .ForgetPwd{
+.login-form-1 .SignUp{
     color: #0062cc;
     font-weight: 600;
     text-decoration: none;
@@ -86,13 +87,17 @@ pageEncoding="UTF-8"%>
                     <input type="password" class="form-control" placeholder="Senha *" value="" />
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btnSubmit" value="Login" />
+					<input type="submit" class="btnSubmit" value="Login" />
                 </div>
+                <div class="form-group">
+					<a href="/health.plus/paciente/cadastro" class="SignUp">Cadastrar-se</a>
+				</div>
             </form>
         </div>
         <div class="col-md-6 login-form-2">
             <h3>Empresa</h3>
-            <form>
+            <center><b style="color: white">Em breve!</b></center>
+            <form style="display: none">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="E-mail *" value="" />
                 </div>
