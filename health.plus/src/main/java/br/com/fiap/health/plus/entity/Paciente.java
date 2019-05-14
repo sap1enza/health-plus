@@ -36,13 +36,17 @@ public class Paciente implements Serializable{
 //	@Column(name="cpf")
 //	private String cpf;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name="birth_date")
-	private Calendar dataNasc;
+//	@Temporal(TemporalType.DATE)
+//	@Column(name="birth_date")
+//	private Calendar dataNasc;
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name="gender", columnDefinition="CHAR")
-	private Genero genero;
+	private String dataNasc;
+//	
+//	@Enumerated(EnumType.STRING)
+//	@Column(name="gender", columnDefinition="CHAR")
+//	private Genero genero;
+	
+	private char genero;
 	
 //	@Column(name="phone_number")
 //	private String telefone;
@@ -55,7 +59,7 @@ public class Paciente implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Paciente(int id, String nome, String email, Calendar dataNasc, Genero genero) {
+	public Paciente(int id, String nome, String email, String dataNasc, char genero) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -88,19 +92,19 @@ public class Paciente implements Serializable{
 		this.email = email;
 	}
 
-	public Calendar getDataNasc() {
+	public String getDataNasc() {
 		return dataNasc;
 	}
 
-	public void setDataNasc(Calendar dataNasc) {
+	public void setDataNasc(String dataNasc) {
 		this.dataNasc = dataNasc;
 	}
 
-	public Genero getGenero() {
+	public char getGenero() {
 		return genero;
 	}
 
-	public void setGenero(Genero genero) {
+	public void setGenero(char genero) {
 		this.genero = genero;
 	}
 	

@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.fiap.health.plus.dao.PacienteDAO;
 import br.com.fiap.health.plus.entity.Paciente;
 
+
 @Controller
 @RequestMapping("paciente")
 public class PacienteController {
@@ -31,7 +32,7 @@ public class PacienteController {
 			dao.cadastrar(paciente);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ModelAndView("estacionamento/cadastro");
+			return new ModelAndView("paciente/cadastro");
 		}
 		
 		attr.addFlashAttribute("msg", "Cadastrado com sucesso!");
