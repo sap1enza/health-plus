@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 @Table(name="T_USUARIO")
 public class Usuario {
@@ -18,9 +20,11 @@ public class Usuario {
 	@SequenceGenerator(name="usuario",sequenceName="SQ_T_USUARIO",allocationSize=1)
 	private int id;
 	
+	@Expose
 	@Column(name="nome",nullable=false)
 	private String nome;
 
+	@Expose
 	@Column(name="email",nullable=false)
 	private String email;
 
