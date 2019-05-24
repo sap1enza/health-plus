@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 @Table(name="T_CLINICA")
 public class Clinica {
@@ -18,21 +20,27 @@ public class Clinica {
 	@SequenceGenerator(name="clinica",sequenceName="SQ_T_CLINICA",allocationSize=1)
 	private int id;
 
+	@Expose
 	@Column(name="nome",nullable=false)
 	private String nome;
 	
+	@Expose
 	@Column(name="email",nullable=false)
 	private String email;
 	
+	@Expose
 	@Column(name="especialidade",nullable=false)
 	private String especialidade;
 	
+	@Expose
 	@Column(name="endereco")
 	private String endereco;
 	
+	@Expose
 	@Column(name="cep",nullable=false)
 	private String cep;
 	
+	@Expose
 	@Column(name="telefone")
 	private String telefone;
 

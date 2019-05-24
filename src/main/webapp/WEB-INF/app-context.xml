@@ -15,18 +15,10 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.spri
 	</bean>
 	
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-	  <property name="persistenceUnitName" value="health" />
-	  <property name="dataSource" ref="oracleDataSource" />
+	  <property name="persistenceUnitName" value="ORACLE_HEALTH" />
 	  <property name="jpaVendorAdapter">
 	    <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
 	  </property>
-	</bean>
-	
-	<bean id="oracleDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	  <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-	  <property name="url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
-	  <property name="username" value="rm81640" />
-	  <property name="password" value="220599" />
 	</bean>
 	
 	<!-- Transações -->
@@ -36,5 +28,4 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.spri
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 	<mvc:default-servlet-handler/>
-
 </beans>
