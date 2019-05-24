@@ -1,6 +1,5 @@
 package br.com.health.controller;
 
-import javax.management.Query;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,23 +23,23 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioDAO dao;
 
-	@GetMapping("cadastro")
+	@GetMapping("cadastrar")
 	public String abrirForm(Usuario usuario) {
-		return "usuario/cadastro";
+		return "usuario/cadastrar";
 	}
 	
-	@PostMapping("cadastro")
+	@PostMapping("cadastrar")
 	@Transactional
 	public ModelAndView processarForm(Usuario usuario, RedirectAttributes attr) {
 		try {
 			dao.cadastrar(usuario);
 		}catch(Exception e) {
 			e.printStackTrace();
-			return new ModelAndView("usuario/cadastro");
+			return new ModelAndView("usuario/cadastrar");
 		}
 		
 		attr.addFlashAttribute("msg", "Cadastro realizado com sucesso!");
-		return new ModelAndView("redirect:/usuario/cadastro");
+		return new ModelAndView("redirect:/usuario/cadastrar");
 	}
 	
 	@GetMapping("entrar")
