@@ -20,23 +20,23 @@ public class ClinicaController {
 	@Autowired
 	private ClinicaDAO dao;
 	
-	@GetMapping("cadastro")
+	@GetMapping("cadastrar")
 	public String abrirForm(Clinica clinica) {
-		return "clinica/cadastro";
+		return "clinica/cadastrar";
 	}
 	
-	@PostMapping("cadastro")
+	@PostMapping("cadastrar")
 	@Transactional
 	public ModelAndView processarForm(Clinica clinica, RedirectAttributes attr) {
 		try {
 			dao.cadastrar(clinica);
 		}catch(Exception e) {
 			e.printStackTrace();
-			return new ModelAndView("clinica/cadastro");
+			return new ModelAndView("clinica/cadastrar");
 		}
 		
 		attr.addFlashAttribute("msg", "Clinica cadastrada com sucesso!");
-		return new ModelAndView("redirect:/clinica/cadastro");
+		return new ModelAndView("redirect:/clinica/cadastrar");
 	}
 	
 	@GetMapping("listar")
