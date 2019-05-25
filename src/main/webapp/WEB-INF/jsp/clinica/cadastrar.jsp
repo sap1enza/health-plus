@@ -9,7 +9,7 @@
 	<h1>Cadastro de Clínica</h1>
 	${msg}
 
-	<c:url value="/clinica/cadastro" var="action" />
+	<c:url value="/clinica/cadastrar" var="action" />
 	<form:form action="${action}" method="post" commandName="clinica">
 		<div class="form-group">
 			<form:label path="nome">Nome</form:label>
