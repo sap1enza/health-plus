@@ -8,7 +8,7 @@
 	
 	<h1>Cadastro de Usuario</h1>
 	${msg}
-	<c:url value="/usuario/cadastro" var="action" />
+	<c:url value="/usuario/cadastrar" var="action" />
 	<form:form action="${action}" method="post" commandName="usuario">
 		<div class="form-group">
 			<form:label path="nome">Nome</form:label>
